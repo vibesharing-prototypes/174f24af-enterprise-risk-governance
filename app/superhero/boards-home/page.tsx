@@ -296,7 +296,65 @@ export default function BoardsHomePage() {
   const router = useRouter();
 
   return (
-    <div className="h-screen flex overflow-hidden">
+    <div className="h-screen flex flex-col overflow-hidden">
+      {/* Demo controls — matching gc-commandcenter */}
+      <div className="border-b-2 border-[#0ea5e9]/40 bg-[#e0f2fe] flex-shrink-0">
+        <div className="border-b border-[#0ea5e9]/30 bg-[#bae6fd] px-4 py-2">
+          <p className="text-[10px] font-medium uppercase tracking-widest text-[#0369a1]">
+            Demo controls — not part of prototype
+          </p>
+        </div>
+
+        <div className="w-full border-b border-[#0ea5e9]/20 bg-[#e0f2fe]">
+          <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-3 flex-wrap gap-2">
+            <div className="flex items-center gap-4">
+              <span className="rounded-full border-2 border-[#0c4a6e] bg-[#7dd3fc]/30 px-3 py-1 text-xs font-semibold text-[#0c4a6e]">
+                Viewing as: Change-Averse General Counsel using Boards
+              </span>
+            </div>
+            <div className="flex items-center gap-1 rounded-xl border border-[#0ea5e9]/40 bg-white p-1">
+              <button className="rounded-lg px-3 py-1.5 text-xs font-medium transition bg-[#0ea5e9] text-white">
+                Near-Term: Boards Entry
+              </button>
+              <button
+                onClick={() => router.push("/gc-commandcenter")}
+                className="rounded-lg px-3 py-1.5 text-xs font-medium transition text-[#0369a1] hover:bg-[#bae6fd]"
+              >
+                Full Vision: Command Center
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full border-b border-[#0ea5e9]/20 bg-[#e0f2fe]">
+          <div className="mx-auto max-w-7xl px-4 py-3">
+            <div className="flex items-start gap-3">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#fecaca]">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b91c1c" strokeWidth="2">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                  <path d="M12 9v4M12 17h.01" />
+                </svg>
+              </div>
+              <div className="flex-1">
+                <p className="text-sm text-[#0c4a6e]">
+                  <span className="font-medium text-[#075985]">Scenario:</span> The General Counsel opens the standard Boards system enhanced with the GRC Command Center panel and sees that monitoring agents have detected 
+                  emerging risks not captured in upcoming Board materials or regulatory filings. The GC will assess the risks, 
+                  coordinate with stakeholders, update 10K risk disclosures, and notify the Board.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t-2 border-[#0ea5e9] bg-[#0c4a6e] px-4 py-2">
+          <p className="text-[10px] font-medium uppercase tracking-widest text-[#7dd3fc]">
+            ↓ Prototype starts below (Diligent Boards with GRC Command Center sidebar)
+          </p>
+        </div>
+      </div>
+
+      {/* Main layout row */}
+      <div className="flex flex-1 min-h-0 overflow-hidden">
       {/* Boards section (header + body) */}
       <div className="flex-1 flex flex-col min-w-0 bg-[#f0f2f5]">
       {/* Top bar */}
@@ -370,7 +428,7 @@ export default function BoardsHomePage() {
               </div>
               <input
                 type="text"
-                placeholder="Search books"
+                placeholder="Search all your board books, decisions, minutes, and even voting records..."
                 className="w-full rounded-lg border border-[#d1d5db] bg-white pl-10 pr-4 py-2 text-sm text-[#374151] placeholder-[#9ca3af] focus:border-[#3b82f6] focus:outline-none focus:ring-1 focus:ring-[#3b82f6]"
               />
             </div>
@@ -541,9 +599,9 @@ export default function BoardsHomePage() {
       {/*  GRC Command Center Column — full browser height                     */}
       {/* ------------------------------------------------------------------ */}
       <aside className="w-[340px] flex-shrink-0 border-l border-[#1e293b] bg-[#0f172a] flex flex-col overflow-y-auto">
-          <div className="flex-1 p-5 space-y-5">
+          <div className="flex-1 space-y-4">
             {/* Header */}
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between px-4 pt-4">
               <div className="flex items-center gap-2.5">
                 <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#1e293b] border border-[#334155] p-1">
                   <DiligentLogo className="h-4 w-4" />
@@ -557,42 +615,60 @@ export default function BoardsHomePage() {
             <div className="border-t border-[#334155]/60" />
 
             {/* Emerging risks alert */}
-            <div className="rounded-xl border border-[#92400e]/40 bg-[#451a03]/50 p-4 space-y-3">
+            <div className="rounded-xl border border-[#dc2626]/30 bg-[#1c1017] p-4 space-y-3 mx-4">
               <div className="flex items-start gap-2.5">
-                <div className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-[#f59e0b] flex-shrink-0">
+                <div className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-[#dc2626] flex-shrink-0">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M12 2L1 21h22L12 2zm0 4l7.53 13H4.47L12 6z" /><rect x="11" y="10" width="2" height="4" fill="white" /><rect x="11" y="16" width="2" height="2" fill="white" /></svg>
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-[#fbbf24]">Agents Detected Emerging Risks</p>
-                  <p className="text-xs font-medium text-[#fcd34d]/80 mt-0.5">3 risks require disclosure review</p>
+                  <p className="text-sm font-semibold text-[#fca5a5]">Agents Detected Emerging Risks</p>
+                  <p className="text-xs font-medium text-[#f87171]/70 mt-0.5">3 risks require disclosure review</p>
                 </div>
               </div>
 
-              <p className="text-xs text-[#fde68a]/70 leading-relaxed">
+              <p className="text-xs text-[#e2e8f0]/60 leading-relaxed">
                 Your monitoring agents detected emerging risks that may not be adequately disclosed in current SEC filings or Board meeting materials. Review recommended before the Feb 28 Board meeting.
               </p>
 
-              {/* Risk severity list */}
+              {/* Risk severity list with tooltips */}
               <div className="space-y-2">
                 <div>
                   <div className="flex items-center gap-2 mb-1">
                     <span className="inline-flex items-center rounded-full bg-[#dc2626] px-2 py-0.5 text-[10px] font-bold text-white">1 Critical</span>
                   </div>
-                  <p className="text-xs text-[#fde68a]/90 pl-1 leading-relaxed">— Taiwan Strait Geopolitical Tensions</p>
+                  <div className="group relative inline-flex items-center gap-1.5 pl-1 cursor-help">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 group-hover:stroke-[#93c5fd] transition-colors"><circle cx="12" cy="12" r="10" /><line x1="12" y1="16" x2="12" y2="12" /><line x1="12" y1="8" x2="12.01" y2="8" /></svg>
+                    <p className="text-xs text-[#e2e8f0]/80 leading-relaxed">Taiwan Strait Geopolitical Tensions</p>
+                    <div className="absolute left-0 top-full mt-2 w-72 rounded-lg border border-[#334155] bg-[#1e293b] p-3 text-xs text-[#cbd5e1] leading-relaxed shadow-xl opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity z-20">
+                      Escalating tensions in the Taiwan Strait may disrupt semiconductor supply chain. 47% of our chip suppliers have Taiwan-based operations. Prior board materials (Q3) referenced Vietnam as diversification target under evaluation.
+                    </div>
+                  </div>
                 </div>
                 <div>
                   <div className="flex items-center gap-2 mb-1">
                     <span className="inline-flex items-center rounded-full bg-[#f97316] px-2 py-0.5 text-[10px] font-bold text-white">2 High</span>
                   </div>
-                  <div className="space-y-0.5 pl-1">
-                    <p className="text-xs text-[#fde68a]/90 leading-relaxed">— Critical Vendor Cybersecurity Breach</p>
-                    <p className="text-xs text-[#fde68a]/90 leading-relaxed">— EU Digital Markets Act Enforcement Pattern</p>
+                  <div className="space-y-1 pl-1">
+                    <div className="group relative inline-flex items-center gap-1.5 cursor-help">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 group-hover:stroke-[#93c5fd] transition-colors"><circle cx="12" cy="12" r="10" /><line x1="12" y1="16" x2="12" y2="12" /><line x1="12" y1="8" x2="12.01" y2="8" /></svg>
+                      <p className="text-xs text-[#e2e8f0]/80 leading-relaxed">Critical Vendor Cybersecurity Breach</p>
+                      <div className="absolute left-0 top-full mt-2 w-72 rounded-lg border border-[#334155] bg-[#1e293b] p-3 text-xs text-[#cbd5e1] leading-relaxed shadow-xl opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity z-20">
+                        CloudSecure Inc. (our primary data processing vendor) disclosed a ransomware incident. They process customer PII under 3 of our data processing agreements.
+                      </div>
+                    </div>
+                    <div className="group relative inline-flex items-center gap-1.5 cursor-help">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 group-hover:stroke-[#93c5fd] transition-colors"><circle cx="12" cy="12" r="10" /><line x1="12" y1="16" x2="12" y2="12" /><line x1="12" y1="8" x2="12.01" y2="8" /></svg>
+                      <p className="text-xs text-[#e2e8f0]/80 leading-relaxed">EU Digital Markets Act Enforcement Pattern</p>
+                      <div className="absolute left-0 top-full mt-2 w-72 rounded-lg border border-[#334155] bg-[#1e293b] p-3 text-xs text-[#cbd5e1] leading-relaxed shadow-xl opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity z-20">
+                        EC initiated enforcement actions against 3 companies in our sector for DMA non-compliance. Pattern analysis suggests our EU operations may face similar scrutiny.
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Review Sources */}
-              <div className="border-t border-[#92400e]/30 pt-3">
+              <div className="pt-1">
                 <Link href="/superhero/reviewer" className="inline-flex items-center gap-1.5 rounded-lg border border-[#475569] bg-[#1e293b] px-3 py-1.5 text-xs font-medium text-[#60a5fa] hover:bg-[#334155] hover:border-[#60a5fa] transition-all">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
                   Review Sources
@@ -600,16 +676,16 @@ export default function BoardsHomePage() {
               </div>
 
               {/* Recommendation */}
-              <div className="border-t border-[#92400e]/30 pt-3">
-                <p className="text-xs font-semibold text-[#fbbf24] mb-1.5">Recommendation:</p>
-                <div className="space-y-1.5 text-xs text-[#fde68a]/80 leading-relaxed">
+              <div className="border-t border-[#334155] pt-3">
+                <p className="text-xs font-semibold text-[#f87171] mb-1.5">Recommendation:</p>
+                <div className="space-y-1.5 text-xs text-[#e2e8f0]/70 leading-relaxed">
                   <div className="flex gap-1.5">
                     <span className="flex-shrink-0">1.</span>
                     <span>Assign Risk Owners to provide context and point of view</span>
                   </div>
                   <div className="flex gap-1.5">
                     <span className="flex-shrink-0">2.</span>
-                    <span>Decide if these new risks should be disclosed in upcoming 10-Q to be filed in <span className="font-semibold text-[#fbbf24]">13 days</span></span>
+                    <span>Decide if these new risks should be disclosed in upcoming 10-Q to be filed in <span className="font-semibold text-[#f87171]">13 days</span></span>
                   </div>
                 </div>
               </div>
@@ -619,7 +695,7 @@ export default function BoardsHomePage() {
             <div className="border-t border-[#334155]" />
 
             {/* Other things on your plate */}
-            <div>
+            <div className="px-4">
               <h3 className="text-sm font-semibold text-[#e2e8f0] mb-3">Other things on your plate</h3>
               <div className="space-y-2">
                 <button className="flex items-center gap-2.5 w-full rounded-lg border border-[#334155] bg-[#1e293b] px-3.5 py-2.5 text-left hover:border-[#3b82f6] hover:bg-[#1e293b]/80 transition-all group">
@@ -649,7 +725,7 @@ export default function BoardsHomePage() {
             <div className="relative">
               <input
                 type="text"
-                defaultValue="Show me suggested Risk Owners to provide context and background"
+                defaultValue="Show me suggested Risk Owners..."
                 className="w-full rounded-full border border-[#475569] bg-[#0f172a] pl-4 pr-10 py-2.5 text-xs text-[#e2e8f0] placeholder-[#64748b] focus:border-[#3b82f6] focus:outline-none focus:ring-1 focus:ring-[#3b82f6]"
               />
               <button
@@ -665,6 +741,7 @@ export default function BoardsHomePage() {
             </p>
           </div>
         </aside>
+      </div>{/* end main layout row */}
     </div>
   );
 }
